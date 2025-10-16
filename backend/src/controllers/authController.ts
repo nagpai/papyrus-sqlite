@@ -60,7 +60,7 @@ export const changePassword = asyncHandler(async (req: Request, res: Response) =
   });
 });
 
-export const getAllLibrarians = asyncHandler(async (req: Request, res: Response) => {
+export const getAllLibrarians = asyncHandler(async (_req: Request, res: Response) => {
   const librarians = await authService.getAllLibrarians();
 
   res.json({

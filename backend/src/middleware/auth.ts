@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import jwt from 'jsonwebtoken';
+import jwt, { SignOptions } from 'jsonwebtoken';
 import { JWTPayload } from '../types';
 
 // Extend Express Request type to include user
@@ -49,5 +49,6 @@ export const authorizeRoles = (...roles: string[]) => {
 
 export const generateToken = (payload: JWTPayload): string => {
   const expiresIn = process.env.JWT_EXPIRES_IN || '7d';
+  // @ts-ignore - JWT library typing issue with expiresIn
   return jwt.sign(payload, JWT_SECRET, { expiresIn });
 };
