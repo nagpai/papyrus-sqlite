@@ -1,0 +1,37 @@
+{
+  "name": "papyrus-library-management",
+  "version": "1.0.0",
+  "description": "A comprehensive library management system for apartment block libraries",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "desktop",
+    "mobile",
+    "shared"
+  ],
+  "scripts": {
+    "install:all": "npm install && npm install --workspace=backend && npm install --workspace=desktop",
+    "dev:backend": "npm run dev --workspace=backend",
+    "dev:desktop": "npm run dev --workspace=desktop",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:desktop\"",
+    "build:backend": "npm run build --workspace=backend",
+    "build:desktop": "npm run build --workspace=desktop",
+    "build": "npm run build:backend && npm run build:desktop",
+    "test": "npm test --workspaces",
+    "lint": "npm run lint --workspaces",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,md}\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "prettier": "^3.1.1"
+  },
+  "keywords": [
+    "library-management",
+    "sqlite",
+    "react",
+    "express",
+    "electron"
+  ],
+  "author": "",
+  "license": "MIT"
+}
