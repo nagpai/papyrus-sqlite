@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "A comprehensive library management system for apartment block libraries",
   "private": true,
+  "engines": {
+    "node": ">=22.12.0",
+    "npm": ">=10.0.0"
+  },
   "workspaces": [
     "backend",
     "desktop",
